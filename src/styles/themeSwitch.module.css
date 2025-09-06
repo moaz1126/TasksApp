@@ -1,0 +1,31 @@
+.themeSwitch {
+    all: unset;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.moonIcon {
+    width: 25px;
+    height:25px;
+    cursor: pointer;
+    transition: 0.3s;
+    position: absolute;
+    opacity: 0;
+    right: 0px; 
+}
+.sunIcon {
+    width: 25px;
+    height:25px;
+    cursor: pointer;
+    transition: 0.3s;
+    position: absolute;
+    opacity: 0;
+    right: 0px;
+}
+.showMoonIcon {
+    opacity: 1;
+}
+.showSunIcon {
+    opacity: 1;
+}

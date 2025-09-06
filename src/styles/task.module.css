@@ -1,0 +1,88 @@
+.task {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    background-color: hsl(0, 0%, 98%);
+    padding: 1.125rem 1.5rem;
+    position: relative;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    width: 100%;
+    border-bottom: 1px solid hsl(233, 11%, 84%, 0.25);
+    min-height: 64px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+:global(html.dark) .task {
+    background-color: hsl(235, 24%, 19%);
+    color: hsl(236, 33%, 92%);
+}
+
+
+.task:hover .deleteButton {
+    opacity: 1;
+}
+
+.title {
+    flex: 1;
+    font-size: 18px;
+    color: hsl(235, 19%, 35%);
+    transition: all 0.3s ease;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.25px;
+    line-height: 1.2;
+    padding: 0.125rem 0;
+    transition: 0.3s;
+    transition: color 0.3s ease;
+}
+
+:global(html.dark) .title {
+    color: hsl(236, 33%, 92%);
+}
+
+.task.completed .title {
+    color: hsl(228, 2%, 43%);
+    text-decoration: line-through;
+    text-decoration-color: hsl(233, 11%, 84%);
+    text-decoration-thickness: 1px;
+    opacity: 0.7;
+    transition: color 0.3s ease;
+}
+
+:global(html.dark) .task.completed .title {
+    color: hsl(233, 11%, 84%);
+}
+
+.deleteButton {
+    width: 16px;
+    height: 16px;
+    border: none;
+    background: none;
+    background-image: url('../assets/icon-cross.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    position: absolute;
+    right: 1.5rem;
+    padding: 0;
+}
+
+.deleteButton:hover {
+    transform: scale(1.1);
+}
+
+/* Hover states */
+.task:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Touch device support */
+@media (hover: none) {
+    .deleteButton {
+        opacity: 1;
+    }
+}

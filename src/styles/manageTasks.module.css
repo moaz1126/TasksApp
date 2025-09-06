@@ -1,0 +1,93 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    background-color: hsl(0, 0%, 98%);
+    color: hsl(236, 9%, 61%);
+    font-size: 14px;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+:global(html.dark) .container {
+    background-color: hsl(235, 24%, 19%);
+}
+
+.count {
+    font-size: 14px;
+    color: hsl(236, 9%, 61%);
+}
+
+.filters {
+    display: flex;
+    gap: 1rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.filterButton {
+    background: none;
+    border: none;
+    color: hsl(236, 9%, 61%);
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 0;
+    transition: color 0.2s ease;
+}
+
+.filterButton:hover {
+    color: hsl(235, 19%, 35%);
+    transition: color 0.3s ease;
+}
+
+:global(html.dark) .filterButton:hover {
+    color: hsl(236, 33%, 92%);
+}
+
+.filterButton.active {
+    color: hsl(220, 98%, 61%);
+    transition: color 0.3s ease;
+}
+
+:global(html.dark) .filterButton.active {
+    color: hsl(220, 76%, 55%);
+}
+
+.clearButton {
+    background: none;
+    border: none;
+    color: hsl(236, 9%, 61%);
+    cursor: pointer;
+    font-size: 14px;
+    padding: 0;
+    transition: color 0.2s ease;
+}
+
+.clearButton:hover {
+    color: hsl(235, 19%, 35%);
+    transition: color 0.3s ease;
+}
+
+:global(html.dark)  .clearButton:hover {
+    color: hsl(236, 33%, 92%);
+}
+
+@media (max-width: 950px) {
+    :global(html.dark) .filters {
+        background-color: hsl(235, 24%, 19%);
+    }
+
+    .filters {
+        position: absolute;
+        margin-top: 140px;
+        width: 100%;
+        background-color: hsl(0, 0%, 98%);
+        border-radius: 0.5rem;
+        padding: 1rem;
+        transition: background-color 0.3s ease;
+        justify-content: center;
+    }
+}

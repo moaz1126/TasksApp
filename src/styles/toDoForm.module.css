@@ -1,0 +1,105 @@
+.form {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    background-color: hsl(0, 0%, 98%);
+    padding: 0.7rem 0.8rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+:global(html.dark) .form {
+    background-color: hsl(235, 24%, 19%);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    color: hsl(236, 33%, 92%);
+}
+.input {
+    flex: 1;
+    background: none;
+    border: none;
+    color: hsl(235, 19%, 35%);
+    font-size: 18px;
+    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    padding: 0.5rem;
+    outline: none;
+    caret-color: hsl(220, 98%, 61%);
+    font-weight: bold;
+    transition: color 0.3s ease;
+    margin-right: 6px;
+}
+:global(html.dark) .input {
+    color: hsl(236, 33%, 92%);
+}
+
+.input::placeholder {
+    color: hsl(236, 9%, 61%);
+    transition: color 0.3s ease;
+}
+
+:global(html.dark) .input::placeholder {
+    color: hsla(235, 32%, 92%, 0.831);
+}
+
+.submit {
+    background-color: #1a1a1a;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}   
+
+:global(html.dark) .submit {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+}
+
+.submit:hover {
+    background-color: #2a2a2a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    color: white;
+}
+
+@media (max-width: 950px) {
+    .input {
+        /* box-sizing: border-box; */
+        font-weight: unset;
+        font-size: unset;    
+    }
+}
+
+.error {
+  border-color: #e74c3c; 
+  box-shadow: 0 0 5px rgba(231, 76, 60, 0.7);
+}
+
+.success {
+  border-color: #2ecc71; 
+  box-shadow: 0 0 5px rgba(46, 204, 113, 0.7);
+  animation: successFade 2s forwards;
+}
+
+@keyframes successFade {
+  0% {
+    border-color: #2ecc71;
+    box-shadow: 0 0 5px rgba(46, 204, 113, 0.7);
+  }
+  100% {
+    border-color: transparent;
+    box-shadow: none;
+  }
+}
